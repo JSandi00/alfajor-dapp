@@ -116,7 +116,7 @@ export function useTokenTransfer() {
   const transfer = async (to: `0x${string}`, amount: string) => {
     // ❌ Removed hook call from here
     if (decimals === undefined) {
-      throw new Error('Token decimals not loaded');
+      throw new Error("Token decimals not loaded");
     }
 
     const amountInWei = parseUnits(amount, decimals);
@@ -159,7 +159,7 @@ export function useTokenApproval() {
   const approve = async (spender: `0x${string}`, amount: string) => {
     // ❌ Removed hook call from here
     if (decimals === undefined) {
-      throw new Error('Token decimals not loaded');
+      throw new Error("Token decimals not loaded");
     }
 
     const amountInWei = parseUnits(amount, decimals);
@@ -305,15 +305,15 @@ export function parseTokenAmount(amount: string, decimals: number): bigint {
  */
 export function validateTokenAmount(amount: string, maxDecimals: number): { isValid: boolean; error?: string } {
   if (!amount || amount === '') {
-    return { isValid: false, error: 'Amount is required' };
+    return { isValid: false, error: "Amount is required" };
   }
 
   if (isNaN(Number(amount))) {
-    return { isValid: false, error: 'Amount must be a valid number' };
+    return { isValid: false, error: "Amount must be a valid number" };
   }
 
   if (Number(amount) <= 0) {
-    return { isValid: false, error: 'Amount must be greater than 0' };
+    return { isValid: false, error: "Amount must be greater than 0" };
   }
 
   const decimalPlaces = (amount.split('.')[1] || '').length;

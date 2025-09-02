@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   webpack: (config, { isServer }) => {
     // Handle node polyfills
@@ -36,6 +38,13 @@ const nextConfig = {
   
   // Disable x-powered-by header
   poweredByHeader: false,
+
+  // Github pages
+  output: 'export',
+  trailingSlash: true,
+  images: { unoptimized: true },
+  basePath: isProd ? '/alfajor-dapp' : '',
+  assetPrefix: isProd ? '/alfajor-dapp/' : '',
 };
 
 export default nextConfig;

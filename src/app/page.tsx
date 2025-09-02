@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useBalance, useChainId } from 'wagmi';
@@ -203,7 +203,7 @@ export default function Home() {
           {/* Footer info */}
           <div className="mt-8 text-center space-y-2">
             <p className="text-white/50 text-sm">
-              Make sure you're connected to <strong className="text-white/70">Sepolia testnet</strong>
+              Make sure you&#39;re connected to <strong className="text-white/70">Sepolia testnet</strong>
             </p>
             <p className="text-white/40 text-xs">
               Need test ETH? Visit{' '}

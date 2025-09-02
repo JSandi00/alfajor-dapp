@@ -12,7 +12,8 @@ import { config } from './config';
  * Replace the placeholder below with your actual ControlledTokenExtended contract address
  * Example: "0x1234567890123456789012345678901234567890"
  */
-export const CONTRACT_ADDRESS = "0xD4f9B52777dDEa5002A6B44C249A4dE16fdEFc79" as const;
+export const CONTRACT_ADDRESS: `0x${string}` = "0xD4f9B52777dDEa5002A6B44C249A4dE16fdEFc79";
+export const PLACEHOLDER_ADDRESS = "0x0000000000000000000000000000000000000000";
 
 /**
  * 🔧 PASTE YOUR CONTRACT ABI HERE
@@ -1076,7 +1077,7 @@ export const CONTRACT_ABI =
           "stateMutability": "view",
           "type": "function"
         }
-      ] as const;
+      ];
 
 // =============================================================================
 // CLIENT HELPERS
@@ -1189,7 +1190,7 @@ export async function getWagmiTokenContract() {
  * Check if the contract address is properly configured
  */
 export function isContractConfigured(): boolean {
-  return CONTRACT_ADDRESS !== "0x0000000000000000000000000000000000000000";
+  return CONTRACT_ADDRESS !== PLACEHOLDER_ADDRESS;
 }
 
 /**

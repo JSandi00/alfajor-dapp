@@ -71,10 +71,10 @@ export function TokenInfo() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="text-xl font-bold text-white">
-            {name || 'ControlledTokenExtended'}
+            {name || "ControlledTokenExtended"}
           </h3>
           <p className="text-white/70 text-sm">
-            {symbol || 'CTE'} • {decimals} decimals
+            {symbol || "CTE"} • {decimals} decimals
           </p>
         </div>
         <div className="bg-blue-500/20 px-3 py-1 rounded-full">
@@ -99,7 +99,7 @@ export function TokenInfo() {
           <p className="text-white text-lg font-semibold">
             {totalSupply ? (
               Number(totalSupply) / Math.pow(10, decimals || 18)
-            ).toLocaleString() : '--'}
+            ).toLocaleString() : "--"}
           </p>
         </div>
         
@@ -110,7 +110,7 @@ export function TokenInfo() {
               <div className="h-6 bg-white/20 rounded animate-pulse"></div>
             ) : (
               <p className="text-white text-lg font-semibold">
-                {formattedBalance || '0.0000'}
+                {formattedBalance || "0.0000"}
               </p>
             )}
           </div>

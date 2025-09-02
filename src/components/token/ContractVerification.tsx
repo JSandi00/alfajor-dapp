@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from 'react';
 import { useAccount } from 'wagmi';
@@ -69,7 +69,7 @@ export function ContractVerification() {
             </div>
           ) : (
             <p className="text-red-100/80">
-              Cannot connect to contract. Verify the address and that it's deployed on Sepolia.
+              Cannot connect to contract. Verify the address and that it&#39;s deployed on Sepolia.
             </p>
           )}
         </div>
@@ -84,9 +84,9 @@ export function ContractVerification() {
               <div>
                 <p><strong>Balance:</strong> {formattedBalance} {symbol}</p>
                 <p className="text-sm mt-2">
-                  {balance > 0n 
-                    ? '✅ You have tokens, transfers should work!'
-                    : '⚠️ You don\'t have tokens. You need to mint some first.'
+                  {balance > 0
+                    ? "✅ You have tokens, transfers should work!"
+                    : "⚠️ You don't have tokens. You need to mint some first."
                   }
                 </p>
               </div>
@@ -105,10 +105,10 @@ export function ContractVerification() {
             <p>✅ Contract configured correctly</p>
             <p>✅ ABI loaded with transfer function</p>
             <p>✅ Sepolia network connected</p>
-            <p className={balance && balance > 0n ? 'text-green-300' : 'text-yellow-300'}>
-              {balance && balance > 0n 
-                ? '✅ You have tokens to transfer' 
-                : '⚠️ You need tokens to transfer'
+            <p className={balance && balance > 0 ? 'text-green-300' : 'text-yellow-300'}>
+              {balance && balance > 0
+                ? "✅ You have tokens to transfer" 
+                : "⚠️ You need tokens to transfer"
               }
             </p>
           </div>

@@ -31,7 +31,7 @@ export function ContractDiagnostics() {
       const contractExists = !!name && !!symbol && decimals !== undefined;
       const networkCorrect = isSepoliaTestnet(chainId);
       const walletConnected = isConnected && !!address;
-      const hasTokens = balance !== undefined && balance > 0n;
+      const hasTokens = balance !== undefined && balance > 0;
       const canTransfer = contractExists && networkCorrect && walletConnected && hasTokens;
 
       setDiagnosticResults({
@@ -120,9 +120,9 @@ export function ContractDiagnostics() {
               {overallStatus ? 'All Systems Ready!' : 'Setup Required'}
             </h3>
             <p className={`text-sm ${overallStatus ? 'text-green-100/80' : 'text-yellow-100/80'}`}>
-              {overallStatus 
-                ? 'Your contract is fully configured and ready for transfers.'
-                : 'Some configuration steps are needed before transfers will work.'
+              {overallStatus
+                ? "Your contract is fully configured and ready for transfers."
+                : "Some configuration steps are needed before transfers will work."
               }
             </p>
           </div>
@@ -132,7 +132,7 @@ export function ContractDiagnostics() {
       {/* Detailed Diagnostics */}
       <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
         <h3 className="text-lg font-semibold text-white mb-6">Diagnostic Results</h3>
-        
+
         <div className="space-y-4">
           <DiagnosticItem
             label="Contract Configuration"
@@ -176,7 +176,7 @@ export function ContractDiagnostics() {
             description={
               diagnosticResults.hasTokens
                 ? `Balance: ${formattedBalance} ${symbol}`
-                : balance === 0n 
+                : balance === BigInt(0)
                   ? "Balance: 0 tokens"
                   : "Unable to check balance"
             }
@@ -199,7 +199,7 @@ export function ContractDiagnostics() {
       {/* Quick Actions */}
       <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
         <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <a
             href={`https://sepolia.etherscan.io/address/${CONTRACT_ADDRESS}`}
