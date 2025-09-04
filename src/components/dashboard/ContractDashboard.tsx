@@ -652,6 +652,35 @@ export function ContractDashboard() {
           </div>
 
           <div className="space-y-3">
+            {/* Consolidated Minter Status */}
+            <div className="flex items-center justify-between">
+              <span className="text-white/70">Access Status:</span>
+              {minterLoading ? (
+                  <div className="h-6 w-20 bg-white/20 rounded animate-pulse"></div>
+              ) : (
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      getMinterStatus().color === "green"
+                          ? "bg-green-500/20 text-green-300 border border-green-400/30"
+                          : getMinterStatus().color === "blue"
+                              ? "bg-blue-500/20 text-blue-300 border border-blue-400/30"
+                              : getMinterStatus().color === "yellow"
+                                  ? "bg-yellow-500/20 text-yellow-300 border border-yellow-400/30"
+                                  : "bg-gray-500/20 text-gray-300 border border-gray-400/30"
+                  }`}>
+                  {getMinterStatus().status}
+                </span>
+              )}
+            </div>
+
+            {/* Trial Allowance */}
+            {trialMinterAllowance as bigint && (
+                <div className="bg-black/20 rounded-lg p-3">
+                  <p className="text-white/70 text-sm mb-1">Trial Allowance:</p>
+                  <p className="text-white font-semibold">
+                    {decimals as string ? formatBalance(trialMinterAllowance as bigint, decimals as number) : (trialMinterAllowance as bigint).toString()} {(symbol as string) || "Tokens"}
+                  </p>
+                </div>
+            )}
 
             {/* Trial Expiry */}
             {minterExpiry && (

@@ -7,7 +7,7 @@ import { Providers } from '@/components/providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Web3 Sepolia App',
+  title: 'Alfajor Sepolia App',
   description: 'Next.js Web3 application with RainbowKit and wagmi on Sepolia testnet',
   keywords: ['web3', 'ethereum', 'sepolia', 'nextjs', 'wagmi', 'rainbowkit'],
 };

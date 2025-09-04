@@ -5,6 +5,7 @@ import { useAccount, useBalance, useChainId } from 'wagmi';
 import { useState, useEffect } from 'react';
 import { getNetworkName, isSepoliaTestnet } from '@/lib/networks';
 import { TokenInfo, TokenTransfer, ContractDiagnostics } from '@/components/token';
+import { ContractDashboard } from '@/components/dashboard';
 
 export default function Home() {
   const { address, isConnected } = useAccount();
@@ -149,6 +150,9 @@ export default function Home() {
           {/* Contract Interaction Section */}
           {isConnected && address && (
             <div className="space-y-8">
+              {/* Contract Dashboard */}
+              <ContractDashboard />
+              
               {/* Contract Verification Toggle */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button
