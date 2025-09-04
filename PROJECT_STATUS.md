@@ -40,6 +40,18 @@ Your Next.js 14 Web3 application is fully configured with comprehensive ERC20 co
 - ✅ **Error Handling**: Clear error messages with solutions
 - ✅ **Status Indicators**: Visual feedback for all operations
 
+### 5. **Admin Control Panel** 🆕
+- ✅ **Access Control**: Only configured admin address can access
+- ✅ **Trial Minter Config**: Complete form for `setTrialMinterConfig`
+  - Allowance, duration, global cap, cooldown settings
+  - Enable/disable toggle with validation
+- ✅ **Trial Burner Config**: Complete form for `setTrialBurnerConfig`
+  - Duration, cooldown settings
+  - Enable/disable toggle with validation
+- ✅ **Form Validation**: Non-negative value validation with error messages
+- ✅ **Transaction Handling**: Success/error toasts with real-time feedback
+- ✅ **Admin Instructions**: Built-in configuration guide
+
 ## 🚀 **How to Use**
 
 1. **Start the application**:
@@ -56,6 +68,13 @@ Your Next.js 14 Web3 application is fully configured with comprehensive ERC20 co
    - Get direct links to Etherscan
 
 4. **Transfer tokens** using the transfer panel (if you have tokens)
+
+5. **Admin Functions** (if you're the configured admin):
+   - Access the purple Admin Control Panel
+   - Configure trial minter settings (allowance, duration, global cap, cooldown)
+   - Configure trial burner settings (duration, cooldown)
+   - Enable/disable trial systems
+   - All changes are immediately reflected in the contract
 
 ## 🔧 **Transfer Functionality Status**
 

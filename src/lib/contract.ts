@@ -8,10 +8,13 @@ import { config } from './config';
 // =============================================================================
 
 /**
- * 🔧 PASTE YOUR CONTRACT ADDRESS HERE
- * Replace the placeholder below with your actual ControlledTokenExtended contract address
- * Example: "0x1234567890123456789012345678901234567890"
+ * 🔧 CONFIGURE ADMIN ADDRESS HERE
+ * Replace with the actual admin wallet address that should have access to admin functions
+ * This address will see the Admin Control Panel in the dashboard
  */
+export const ADMIN_ADDRESS: `0x${string}` = "0x24d3DF4f3Bd673f5ACF8398076636242BBda3792"; // Replace with actual admin address
+
+
 export const CONTRACT_ADDRESS: `0x${string}` = "0xD4f9B52777dDEa5002A6B44C249A4dE16fdEFc79";
 export const PLACEHOLDER_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -1185,6 +1188,14 @@ export async function getWagmiTokenContract() {
 // =============================================================================
 // UTILITY FUNCTIONS
 // =============================================================================
+
+/**
+ * Check if the given address is the configured admin
+ */
+export function isAdmin(address: string | undefined): boolean {
+  if (!address) return false;
+  return address.toLowerCase() === ADMIN_ADDRESS.toLowerCase();
+}
 
 /**
  * Check if the contract address is properly configured

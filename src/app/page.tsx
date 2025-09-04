@@ -44,14 +44,14 @@ export default function Home() {
         <div className="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 container mx-auto px-4 py-8 md:py-16">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <div className="text-center mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Alfajor Sepolia App
             </h1>
-            <p className="text-white/70 text-lg">
+            <p className="text-white/70 text-base md:text-lg">
               Connect your wallet and interact with Alfajor contract
             </p>
           </div>
@@ -204,8 +204,8 @@ export default function Home() {
             </div>
           )}
           
-          {/* Footer info */}
-          <div className="mt-8 text-center space-y-2">
+          {/* Footer info - ÚNICO FOOTER */}
+          <div className="mt-12 text-center space-y-2">
             <p className="text-white/50 text-sm">
               Make sure you&#39;re connected to <strong className="text-white/70">Sepolia testnet</strong>
             </p>
@@ -238,6 +238,13 @@ export default function Home() {
         }
         .animation-delay-4000 {
           animation-delay: 4s;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
         }
       `}</style>
     </main>

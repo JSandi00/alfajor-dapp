@@ -2,9 +2,22 @@
 
 ## 🚀 Quick Setup
 
-Your `lib/contract.ts` file is ready to use! Just follow these 2 simple steps:
+Your `lib/contract.ts` file is ready to use! Just follow these 3 simple steps:
 
-### Step 1: Add Your Contract Address
+### Step 1: Configure Admin Address
+In `src/lib/contract.ts`, find this line:
+```typescript
+export const ADMIN_ADDRESS: `0x${string}` = "0x1234567890123456789012345678901234567890";
+```
+
+Replace with the wallet address that should have admin access:
+```typescript
+export const ADMIN_ADDRESS: `0x${string}` = "0xYOUR_ADMIN_WALLET_ADDRESS_HERE";
+```
+
+**Note**: Only this wallet address will see the Admin Control Panel in the dashboard.
+
+### Step 2: Add Your Contract Address
 In `src/lib/contract.ts`, find this line:
 ```typescript
 export const CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000" as const;
@@ -15,7 +28,7 @@ Replace with your actual deployed contract address:
 export const CONTRACT_ADDRESS = "0xYOUR_ACTUAL_CONTRACT_ADDRESS_HERE" as const;
 ```
 
-### Step 2: Add Your Contract ABI
+### Step 3: Add Your Contract ABI
 In `src/lib/contract.ts`, find the `CONTRACT_ABI` array and replace the example ABI with your actual ControlledTokenExtended ABI JSON.
 
 ## 📋 How to Get Your ABI
